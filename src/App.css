@@ -1,0 +1,34 @@
+.dra-menu:hover .dra-menu-ul {
+    display: block;
+}
+
+.dra-menu-ul {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    /* border: 1px solid black; */
+    width: 174px;
+    z-index: 1;
+    background-color: white;
+    display: none;
+}
+
+.dra-menu-ul::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 173px;
+    height: 15px;
+    display: block;
+}
+
+.dra-menu-li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dra-menu-li:hover {
+    background-color: gray;
+    color: white;
+}
