@@ -25,17 +25,17 @@ function isNewProduct(createAtString) {
 }
 
 function selectRandom4(rootArr) {
-    if (rootArr.length < 4) {
+    if (rootArr?.length < 4) {
         return rootArr;
     }
 
     const resultArr = [];
 
     while (resultArr.length < 4) {
-        const index = Math.floor(Math.random() * rootArr.length);
-        if (!resultArr.includes(rootArr[index])) {
-            resultArr.push(rootArr[index]);
-            rootArr.splice(index, 1)
+        const index = Math.floor(Math.random() * rootArr?.length);
+        if (!resultArr?.includes(rootArr[index])) {
+            resultArr?.push(rootArr[index]);
+            rootArr?.splice(index, 1)
         }
     }
 
@@ -48,7 +48,7 @@ const Home = () => {
     const brands = useSelector(state => state.brand.data);
     const products = useSelector(state => state.product.data);
 
-    const rootNewProducts = products.filter(p => isNewProduct(p.createdAt));
+    const rootNewProducts = products?.filter(p => isNewProduct(p.createdAt));
     const newProducts = selectRandom4(rootNewProducts)
 
     const brandProduct = brands.map(b => {

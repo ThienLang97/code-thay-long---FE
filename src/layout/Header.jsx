@@ -44,7 +44,7 @@ const Header = () => {
                             <form action="#" className="hm-searchbox" style={{ minWidth: "500px !important" }}>
                                 <select className="nice-select select-search-category">
                                     <option value={0}>All</option>
-                                    {categories.map((c) => (
+                                    {categories?.map((c) => (
                                         <option key={c.id} value={c.name}>{c.name}</option>
                                     ))}
                                 </select>
@@ -129,7 +129,7 @@ const Header = () => {
                                             <a href="#">Category</a>
 
                                             <ul className="megamenu hb-megamenu">
-                                                {categories.map((c) => (
+                                                {categories?.map((c) => (
                                                     <li key={c.id}>
                                                         <a href="#">{c.name}</a>
                                                         <ul>

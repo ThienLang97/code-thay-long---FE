@@ -12,13 +12,13 @@ const Cart = () => {
     const user = JSON.parse(localStorage.getItem("account_user")) || {};
     let cart = useSelector(state => state.cart.data);
 
-    if (cart.length > 0) {
+    if (cart?.length > 0) {
         const newCart = [...cart]
         const x = newCart.sort((a, b) => a.id - b.id)
         cart = x
     }
 
-    const subTotal = cart.reduce((total, item) => {
+    const subTotal = cart?.reduce((total, item) => {
         return total +=
             item.quantity
             * parseFloat(item.variation.price * (100 - item.variation.product.discountPercentage) / 100).toFixed(2)
